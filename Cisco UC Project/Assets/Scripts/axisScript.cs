@@ -65,4 +65,9 @@ public class axisScript : MonoBehaviour {
 
         testCube.transform.position = newPosition;
     }
+
+    private void plotBar(float x, float y, float z)
+    {
+        Vector3 barPosition;
+    }
 }
