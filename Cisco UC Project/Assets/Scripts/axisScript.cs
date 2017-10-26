@@ -28,6 +28,12 @@ public class axisScript : MonoBehaviour {
     {
         findScaleFactors();
         plotPointAt(7, 5, 6);
+
+        for(int i = 0; i < 5; i++)
+        {
+            plotBar(i, 5, i);
+        }
+        
 	}
 	
 	// Update is called once per frame
@@ -67,9 +73,27 @@ public class axisScript : MonoBehaviour {
         pointPrefab.transform.position = newPosition;
     }
 
-    //No it isn't.
-    private void plotBar(float x, float y, float z)
+    // Plot a bar on the graph.
+    private void plotBar(float xPos, float yValue, float zPos)
     {
-        Vector3 barPosition;
+        // Create a cube to represent the bar.
+        GameObject bar = GameObject.CreatePrimitive(PrimitiveType.Cube);
+
+        // Scale the bar based on it's value.
+        Vector3 scaleTemp = bar.transform.localScale;
+        scaleTemp.y = yValue;
+        bar.transform.localScale = scaleTemp;
+
+        // Set the position of the bar.
+        Vector3 newPosition = new Vector3();
+        newPosition.x = xPos * xScaleFactor;
+        newPosition.y = yValue / 2f;
+        newPosition.z = zPos * zScaleFactor;
+
+        // Make the position relative to the origin.
+        newPosition += origin.transform.position;
+
+        // Set the position of the bar.
+        bar.transform.position = newPosition;
     }
 }
