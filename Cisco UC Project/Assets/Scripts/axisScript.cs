@@ -10,7 +10,7 @@ public class axisScript : MonoBehaviour {
 
     public GameObject origin;
 
-    public GameObject testCube;
+    public GameObject pointPrefab;
 
     private float minX = 0;
     private float maxX = 10;
@@ -36,6 +36,7 @@ public class axisScript : MonoBehaviour {
 		
 	}
 
+    //Set scale factors
     void findScaleFactors()
     {
         //Scale factor for X
@@ -63,7 +64,7 @@ public class axisScript : MonoBehaviour {
 
         newPosition += origin.transform.position;
 
-        testCube.transform.position = newPosition;
+        pointPrefab.transform.position = newPosition;
     }
 
     private void plotBar(float x, float y, float z)
