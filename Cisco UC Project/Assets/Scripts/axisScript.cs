@@ -67,7 +67,7 @@ public class axisScript : MonoBehaviour {
         pointPrefab.transform.position = newPosition;
     }
 
-    //THIS IS MY COMMNET BUGHA GHA GHA
+    //NO NO NO - This is mine
     private void plotBar(float x, float y, float z)
     {
         Vector3 barPosition;
